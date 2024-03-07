@@ -1,0 +1,21 @@
+﻿@model TwoFactorAuth.Models.User
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>UserName : @Model.Username</h4>
+        <h4>
+            @if (@Model.IsTwoFactorEnabled)
+            {
+                
+                <a class="text-" asp-area="" asp-controller="User" asp-action="DisableTwoFactorAuth">Disable Two Factor Authentication</a>
+            }
+            else
+            {
+                <a class="text-success" asp-area="" asp-controller="User" asp-action="EnableTwoFactorAuth">Enable Two Factor Authentication</a>
+            }
+        </h4>
+    </div>
+</div>

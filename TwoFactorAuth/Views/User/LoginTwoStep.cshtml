@@ -1,0 +1,19 @@
+﻿@model EnableAuthenticatorViewModel
+@{
+    ViewData["Title"] = "Login Two Step";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-action="LoginTwoStep">
+            <div class="form-group">
+                <label asp-for="Code" class="control-label">Two Factor Verification Code</label>
+                <input asp-for="Code" class="form-control" autocomplete="off" />
+                <input asp-for="UserName" hidden />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-primary m-2">Verify</button>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </form>
+    </div>
+</div>
